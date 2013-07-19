@@ -359,7 +359,7 @@ void pohon() {
 	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
 	glTranslated(-1.0, 0.0, -20.0);
-	cylinder(8.0, 8.0, 20.0);
+	cylinder(6.0, 6.0, 20.0);
 	glPopMatrix();
 }
 
@@ -431,6 +431,10 @@ void muterMuteran() {
 	glPopMatrix();
 }
 
+void hiasanTengah() {
+
+}
+
 void atapRumah() {
 	glPushMatrix();
 	glRotated(90, 0.0, 0.0, 1.0);
@@ -449,38 +453,58 @@ void display(void) {
 	glLoadIdentity();
 	gluLookAt(viewx, viewy, viewz, 0.0, 0.0, 5.0, 0.0, 1.0, 0.0);
 
-	//Tangga
-//	glPushMatrix();
-//	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-//	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
-//	glRotated(90, 0, 1, 0);
-//	//glTranslated(55, 20, 60);
-//	glTranslated(47, 12, 180);
-//	cylinder(8, 8, 20);
-//	for (int x = 0; x < 3; x++) {
-//		glTranslated(11, 12, 0);
-//		cylinder(8, 8, 20);
-//	}
-//	glPopMatrix();
-//
-//	//Tempat Minum galon
+	//Tempat Minum galon
 	glPushMatrix();
 	glTranslated(20.0, 0.0, -85.0);
 	glRotated(-90.0, 0.0, 1.0, 0.0);
-	glTranslated(125.0, 0.0, -40.0);
+	glTranslated(120.0, 0.0, -65.0);
 	glRotated(180.0, 0.0, 1.0, 0.0);
 	glRotated(90.0, 0.0, 1.0, 0.0);
-	//glScaled(3, 3, 3);
 	galon();
 	glPopMatrix();
-//
-//	//Rumah
+
+	//Rumah
 	glPushMatrix();
-	//glRotated(90.0, 1.0, 0.0, 0.0);
-	glTranslated(25.0, -3.0, -35.0);
-	glRotated(90.0, 0.0, 1.0, 0.0);
-	//glScaled(2, 2, 2);
+	glTranslated(75.0, -3.0, -25.0);
+	glRotated(220.0, 0.0, 1.0, 0.0);
 	rumahMewah();
+	glPopMatrix();
+
+	//pintu rumah 1
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.0, 0.0, 0.0);
+	glRotated(318.0, 0.0, 1.0, 0.0);
+	glTranslated(18.0, 20.0, -60.0);
+	cylinder(10.0, 10.0, 5.0);
+	glPopMatrix();
+
+	//pintu rumah 2
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.1, 1.0, 1.0);
+	glRotated(-225.0, 0.0, 1.0, 0.0);
+	glTranslated(-18.0, 20.0, 57.0);
+	cylinder(14.0, 14.0, 5.0);
+	glPopMatrix();
+
+	//Hiasan Tengah
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
+	glRotated(-80.0, 0.0, 0.0, 1.0);
+	glRotated(-35.0, 1.0, 0.0, 0.0);
+	glRotated(13.0, 0.0, 0.0, 1.0);
+	glTranslated(-15.0, -10.0, -3.0);
+	cylinder(4.0, 4.0, 20.0);
+	for (int t = 0; t < 4; t++) {
+		glTranslated(0.0, 8.0, 0.0);
+		cylinder(4.0, 4.0, 20.0);
+	}
+	for (int t = 0; t < 3; t++) {
+		glTranslated(8, 8.0, 0);
+		cylinder(4.0, 4.0, 20.0);
+	}
 	glPopMatrix();
 
 	//Pagar di tengah
@@ -488,109 +512,92 @@ void display(void) {
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
 	glRotated(-90.0, 1.0, 0.0, 0.0);
-	glTranslated(0.0, -95.0, 5.0);
-	cylinder(6.0, 6.0, 15.0);
-	glTranslated(4.0, 15.0, 0.0);
-	cylinder(6.0, 6.0, 15.0);
-	glTranslated(8.0, 15.0, 0.0);
-	cylinder(6.0, 6.0, 15.0);
-	glTranslated(12.0, 15.0, 0.0);
-	cylinder(6.0, 6.0, 15.0);
-	glTranslated(16.0, 15.0, 0.0);
-	cylinder(6.0, 6.0, 15.0);
+	glTranslated(90.0, -65.0, 5.0);
+	cylinder(5.0, 5.0, 10.0);
+	glTranslated(-15.0, 0.0, 0.0);
+	cylinder(5.0, 5.0, 10.0);
+	glTranslated(-15.0, 0.0, 0.0);
+	cylinder(5.0, 5.0, 10.0);
+	glTranslated(-15.0, 5.0, 0.0);
+	cylinder(5.0, 5.0, 10.0);
+	glTranslated(-15.0, 5.0, 0.0);
+	cylinder(5.0, 5.0, 10.0);
 	glPopMatrix();
-//
-//		//Hiasan Pohon Dipojok
-//		glPushMatrix();
-//		glTranslated(-90.0, 25.0, -90.0);
-//		pohon();
-//		glPopMatrix();
-//
-//		glPushMatrix();
-//		glTranslated(-85.0, 25.0, -70.0);
-//		pohon();
-//		glPopMatrix();
-//
-//		//pohon
-//		glPushMatrix();
-//		glTranslated(-90.0, 25.0, 90.0);
-//		pohon();
-//		glTranslated(30.0, 0.0, 0.0);
-//		pohon();
-//		glTranslated(30.0, 0.0, 0.0);
-//		pohon();
-//		glPopMatrix();
-//
-//		//Muter"an
-//		glPushMatrix();
-//		glTranslated(-90.0, 5.0, 50.0);
-//		muterMuteran();
-//		glPopMatrix();
-//
-//		//Pagar ditengah lurus
-//		glPushMatrix();
-//		glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-//		glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
-//		glRotated(-90.0, 1.0, 0.0, 0.0);
-//		glTranslated(0.0, 95.0, 5.0);
-//		cylinder(6.0, 6.0, 15.0);
-//		for (int x = 0; x < 4; x++) {
-//			glTranslated(0.0, -15.0, 0.0);
-//			cylinder(6.0, 6.0, 15.0);
-//		}
-//		glPopMatrix();
-//
-//		//Pagar di pinggir
-//		glPushMatrix();
-//		glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-//		glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
-//		glRotated(-90.0, 1.0, 0.0, 0.0);
-//		glTranslated(80.0, -35.0, 5.0);
-//		cylinder(6.0, 6.0, 15.0);
-//		for (int x = 0; x < 4; x++) {
-//			glTranslated(0.0, -15.0, 0.0);
-//			cylinder(6.0, 6.0, 15.0);
-//		}
-//		glPopMatrix();
-//
-//		glPushMatrix();
-//		glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-//		glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
-//		glRotated(-90.0, 1.0, 0.0, 0.0);
-//		glTranslated(0.0, -10.0, 5.0);
-//		cylinder(6.0, 6.0, 15.0);
-//		for (int x = 0; x < 6; x++) {
-//			glTranslated(-15.0, 0.0, 0.0);
-//			cylinder(6.0, 6.0, 15.0);
-//		}
-//		glPopMatrix();
-//
-//		//Hiasan Pohon Dipojok
-//		glPushMatrix();
-//		glTranslated(-90.0, 25.0, -90.0);
-//		pohon();
-//		glPopMatrix();
-//
-//		glPushMatrix();
-//		glTranslated(-85.0, 25.0, -70.0);
-//		pohon();
-//		glPopMatrix();
-//
-//		glPushMatrix();
-//		glTranslated(-70.0, 20.0, -90.0);
-//		pohon();
-//		glPopMatrix();
-//
-//		//Tempat Minum
-//		glPushMatrix();
-//		glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-//		glColor3d(0.1, 1.0, 1.0);
-//		glTranslated(-60.0, 10.0, -60.0);
-//		glRotated(-270.0, 1.0, 0.0, 0.0);
-//		cylinder(15.0, 10.0, 3.0);
-//		glPopMatrix();
-//
-//		//tiang 1
+	//pohon
+	glPushMatrix();
+	glTranslated(-80.0, 25.0, 60.0);
+	pohon();
+	glTranslated(30.0, 0.0, 0.0);
+	pohon();
+	glTranslated(30.0, 0.0, 0.0);
+	pohon();
+	glTranslated(30.0, 0.0, 0.0);
+	pohon();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-90.0, 25.0, -60.0);
+	pohon();
+	glTranslated(30.0, 0.0, 0.0);
+	pohon();
+	glTranslated(30.0, 0.0, 0.0);
+	pohon();
+	glPopMatrix();
+
+	//Muter"an
+	glPushMatrix();
+	glTranslated(-85.0, 5.0, 20.0);
+	muterMuteran();
+	glPopMatrix();
+
+	//Pagar ditengah lurus
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glTranslated(10.0, 65.0, 5.0);
+	cylinder(6.0, 6.0, 15.0);
+	for (int x = 0; x < 2; x++) {
+		glTranslated(0.0, -15.0, 0.0);
+		cylinder(6.0, 6.0, 15.0);
+	}
+	glPopMatrix();
+
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glTranslated(-90.0, 40.0, 5.0);
+	cylinder(6.0, 6.0, 15.0);
+	for (int x = 0; x < 2; x++) {
+		glTranslated(0.0, -15.0, 0.0);
+		cylinder(6.0, 6.0, 15.0);
+	}
+	glPopMatrix();
+
+	//Pagar di pinggir
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.803921568627451, 0.5215686274509804, 0.2470588235294118);
+	glRotated(-90.0, 1.0, 0.0, 0.0);
+	glTranslated(90.0, -10.0, 5.0);
+	cylinder(5.0, 5.0, 10.0);
+	for (int x = 0; x < 2; x++) {
+		glTranslated(-15.0, 0.0, 0.0);
+		cylinder(5.0, 5.0, 10.0);
+	}
+	glPopMatrix();
+
+	//Tempat Minum
+	glPushMatrix();
+	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+	glColor3d(0.1, 1.0, 1.0);
+	glTranslated(-60.0, 10.0, -30.0);
+	glRotated(-270.0, 1.0, 0.0, 0.0);
+	cylinder(15.0, 10.0, 3.0);
+	glPopMatrix();
+
+	//tiang 1
 //		glPushMatrix();
 //		glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 //		glColor3d(0.0, 0.0, 0.0);
@@ -619,8 +626,6 @@ void display(void) {
 //		glTranslated(-100.0, -100.0, 0.0);
 //		cylinder(3.0, 3.0, 100);
 //		glPopMatrix();
-
-
 
 	glPushMatrix();
 	//glBindTexture(GL_TEXTURE_3D, texture[0]);
@@ -656,7 +661,7 @@ void init(void) {
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 	glEnable(GL_CULL_FACE);
 
-	_terrain = loadTerrain("heightmap.bmp",20);
+	_terrain = loadTerrain("heightmap.bmp", 20);
 	_terrainTanah = loadTerrain("heightmapTanah.bmp", 20);
 	_terrainAir = loadTerrain("heightmapAir.bmp", 20);
 
